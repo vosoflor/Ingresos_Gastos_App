@@ -16,22 +16,22 @@ La librería utilizada es Flask (https://flask.palletsprojects.com/en/2.2.x/quic
 
     - En mac
     
-        ```export FLASK_APP=hello.py```
+        ```export FLASK_APP=main.py```
     
     - En windows
     
-        ```set FLASK_APP=hello.py```
+        ```set FLASK_APP=main.py```
 
 2. Comando para ejecutar el servidor:
 
-    ```flask --app hello run```
+    ```flask --app main run```
     
     Al ejecutar el servidor aparece la ruta que en este caso sería el localhost http://127.0.0.1:5000.
 
 3. Comando para ejecutar el servidor pero haciendo actualizaciones de código en tiempo real:
 
-    ```flask --app hello --debug run```
+    ```flask --app main --debug run```
 
 4. Comando especial para lanzar el servidor en un puerto diferente. Ésto se utiliza en los casos que el puerto 5000 esté ocupado.
 
-    ```flask --app hello run -p 5001```
+    ```flask --app main run -p 5001```
