@@ -1,61 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresos y gastos - Listas</title>
-</head>
+{% extends "base.html" %}
 
-<style>
-    table, th, td {border:1px solid black;}
-</style>
+{% block pageBase %}
 
-<body>
-    
-    <header>
-        <h1>Aplicación Flask de Bootcamp Cero XIII</h1>
-    </header>
+    <h1>Ésto sería la lista de ingresos y gastos</h1>
+    <p>Un simulacro de contabilidad</p>
 
-    <section>
-        
-        <h1>Ésto sería la lista de ingresos y gastos</h1>
-        <p>Un simulacro de contabilidad</p>
-        
-        <table>
-            <thead><!--Hace referencia al head de una table -->
-                <tr><!--Aquí se declaran títulos -->
-                    <th>Fecha</th>
-                    <th>Concepto</th> 
-                    <th>Cantidad</th>
-                </tr>
-            </thead>
-            <tbody><!--Hace referencia al body de una table -->
+    <table>
+        <thead>{# Hace referencia al head de una table #}
+            <tr>{# Aquí se declaran títulos #}
+                <th>Fecha</th>
+                <th>Concepto</th> 
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>{# Hace referencia al body de una table #}
+            {% for item in lista %} {# Se repetirá toda estructura dentro #}
                 <tr>
-                    <td>18/12/2022</td>
-                    <td>Regalo de reyes</td> 
-                    <td>EUR -275.50</td>
+                    <td>{{ item.Fecha }}</td>
+                    <td>{{ item.Concepto }}</td>
+                    <td>€ {{ item.Cantidad }}</td>
                 </tr>
-                <tr>
-                    <td>19/12/2022</td>
-                    <td>Cobro de trabajo</td> 
-                    <td>EUR 1,200</td>
-                </tr>
-                <tr>
-                    <td>18/12/2022</td>
-                    <td>Ropa de navidad</td> 
-                    <td>EUR -355.50</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <a href="http://127.0.0.1:5000/new">Nuevo</a><!--Etiqueta que sirve para navegar-->
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="http://127.0.0.1:5000/new">Nuevo</a>{# Etiqueta que sirve para navegar #}
+    <br>
 
-    </section>
-    
-    <footer>
-        @copy, 2022 - Todos los derechos reservados - vero_oso11@hotmail.com
-    </footer>
-
-</body>
-</html>
+{% endblock %}
