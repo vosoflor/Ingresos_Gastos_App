@@ -16,9 +16,9 @@
         <tbody>{# Hace referencia al body de una table #}
             {% for item in lista %} {# Se repetirá toda estructura dentro #}
                 <tr>
-                    <td>{{ item.Fecha }}</td>
-                    <td>{{ item.Concepto }}</td>
-                    <td>€ {{ item.Cantidad }}</td>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>€ {{ item[2] }}</td>
                 </tr>
             {% endfor %}
         </tbody>

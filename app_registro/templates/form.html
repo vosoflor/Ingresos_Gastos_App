@@ -1,18 +1,20 @@
-{% block formBase %}
+{% extends "base.html" %}
+
+{% block pageBase %}
 
     <h1>Ésto sería {{ typeAction }} en la lista de ingresos y gastos</h1>
 
-    <form>
-        <label for="Fecha">Fecha:</label>
-        <input type="date" name = "Fecha", placeholder="">
+    <form action = "/new" method = "post">
+        <label for = "Fecha">Fecha:</label>
+        <input type = "date" name = "Fecha" required>
         <br><br>
-        <label for="Concepto">Concepto:</label>
-        <input type="text" name = "Concepto", placeholder="", value="Valor">
+        <label for = "Concepto">Concepto:</label>
+        <input type = "text" name = "Concepto" placeholder = "Ingrese concepto" required>
         <br><br>
-        <label for="Cantidad">Cantidad:</label>
-        <input type="number" name = "Cantidad", placeholder="Ingrese costo", value="">
+        <label for = "Cantidad">Cantidad:</label>
+        <input type = "number" step = "any" name = "Cantidad" placeholder = "Ingrese costo" required>
         <br><br>
-        <button onclick = "alert('Ya lo guardaste, gracias!')">{{ buttonAction }}</button>
+        <button type = submit>{{ buttonAction }}</button>
     </form>
     <br>
     <a href="/">Regresar</a>{# Etiqueta que sirve para navegar #}
