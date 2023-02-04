@@ -8,9 +8,11 @@
     <table>
         <thead>{# Hace referencia al head de una table #}
             <tr>{# Aquí se declaran títulos #}
+                <th>ID</th>
                 <th>Fecha</th>
                 <th>Concepto</th> 
                 <th>Cantidad</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>{# Hace referencia al body de una table #}
@@ -18,7 +20,12 @@
                 <tr>
                     <td>{{ item[0] }}</td>
                     <td>{{ item[1] }}</td>
-                    <td>€ {{ item[2] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>€ {{ item[3] }}</td>
+                    <td>
+                        <a href="/delete/{{ item[0] }}">Eliminar</a>
+                        <a href="/modify/{{ item[0] }}">Modificar</a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>

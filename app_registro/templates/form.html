@@ -6,17 +6,25 @@
 
     <form action = "/new" method = "post">
         <label for = "Fecha">Fecha:</label>
-        <input type = "date" name = "Fecha" required>
+        <input type = "date" name = "Fecha" required value = "{{ requestForm.Fecha }}">
         <br><br>
         <label for = "Concepto">Concepto:</label>
-        <input type = "text" name = "Concepto" placeholder = "Ingrese concepto" required>
+        <input type = "text" name = "Concepto" placeholder = "Ingrese concepto" value = "{{ requestForm.Concepto }}">
         <br><br>
         <label for = "Cantidad">Cantidad:</label>
-        <input type = "number" step = "any" name = "Cantidad" placeholder = "Ingrese costo" required>
+        <input type = "number" step = "0.01" name = "Cantidad" placeholder = "Ingrese costo" value = "{{ requestForm.Cantidad }}">
         <br><br>
         <button type = submit>{{ buttonAction }}</button>
     </form>
     <br>
     <a href="/">Regresar</a>{# Etiqueta que sirve para navegar #}
+
+    <article>
+        <ul>
+            {% for item in msgError %}
+            <li>{{ item }}</li>
+            {% endfor %}                    
+        </ul>
+    </article>
 
 {% endblock %}

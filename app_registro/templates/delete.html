@@ -4,6 +4,25 @@
 
     <h1>Ésto se utilizaría para eliminar registro en la lista de ingresos y gastos</h1>
     <br>
+    <table>
+        <tr>
+            <td>Fecha:</td>
+            <td>{{ registro[1] }}</td>
+        </tr>
+        <tr>
+            <td>Concepto:</td>
+            <td>{{ registro[2] }}</td>
+        </tr>
+        <tr>
+            <td>Cantidad:</td>
+            <td>{{ registro[3] }}</td>
+        </tr>
+    </table>
+    <br>
+    <form action="/delete/{{ registro[0] }}" method="post">
+        <button type = submit>Borrar registro</button>
+    </form>
+    <br>
     <a href="/">Regresar</a>{# Etiqueta que sirve para navegar #}
 
 {% endblock %}
