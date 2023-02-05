@@ -20,11 +20,10 @@ def select_by(id): # Devuelve un registro con el id de la entrada o vacío si no
             break
     
     selectedDictionary = dict()
-    selectedDictionary["id"] = selected[0]
-    selectedDictionary["Fecha"] = selected[1]
-    selectedDictionary["Concepto"] = selected[2]
-    selectedDictionary["Cantidad"] = selected[3]
-    
+    columnName = ["id", "Fecha", "Concepto", "Cantidad"]
+    for i, item in enumerate(columnName):
+        selectedDictionary[item] = selected[i]
+
     return selectedDictionary
 
 def delete_by(id): # Elimina el registro con el id de la entrada
