@@ -3,26 +3,24 @@
 {% block pageBase %}
 
     <h1>Ésto se utilizaría para eliminar registro en la lista de ingresos y gastos</h1>
-    <br>
     <table>
         <tr>
             <td>Fecha:</td>
-            <td>{{ registro[1] }}</td>
+            <td>{{ requestForm["Fecha"] }}</td>
         </tr>
         <tr>
             <td>Concepto:</td>
-            <td>{{ registro[2] }}</td>
+            <td>{{ requestForm["Concepto"] }}</td>
         </tr>
         <tr>
             <td>Cantidad:</td>
-            <td>{{ registro[3] }}</td>
+            <td>{{ requestForm["Cantidad"] }}</td>
         </tr>
     </table>
     <br>
-    <form action="/delete/{{ registro[0] }}" method="post">
+    <form action="/delete/{{ requestForm['id'] }}" method="post">
         <button type = submit>Borrar registro</button>
     </form>
     <br>
-    <a href="/">Regresar</a>{# Etiqueta que sirve para navegar #}
 
-{% endblock %}
+    {% endblock %}

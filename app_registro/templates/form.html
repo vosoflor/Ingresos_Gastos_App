@@ -4,25 +4,23 @@
 
     <h1>Ésto sería {{ typeAction }} en la lista de ingresos y gastos</h1>
 
-    <form action = "/new" method = "post">
+    <form action = "{{ urlForm }}" method = "post">
         <label for = "Fecha">Fecha:</label>
-        <input type = "date" name = "Fecha" required value = "{{ requestForm.Fecha }}">
+        <input type = "date" name = "Fecha" required value = "{{ requestForm['Fecha'] }}">
         <br><br>
         <label for = "Concepto">Concepto:</label>
-        <input type = "text" name = "Concepto" placeholder = "Ingrese concepto" value = "{{ requestForm.Concepto }}">
+        <input type = "text" name = "Concepto" placeholder = "Ingrese concepto" value = "{{ requestForm['Concepto'] }}">
         <br><br>
         <label for = "Cantidad">Cantidad:</label>
-        <input type = "number" step = "0.01" name = "Cantidad" placeholder = "Ingrese costo" value = "{{ requestForm.Cantidad }}">
+        <input type = "number" step = "0.01" name = "Cantidad" id = "quantity" placeholder = "Ingrese costo" value = "{{ requestForm['Cantidad'] }}">
         <br><br>
         <button type = submit>{{ buttonAction }}</button>
     </form>
     <br>
-    <a href="/">Regresar</a>{# Etiqueta que sirve para navegar #}
-
     <article>
         <ul>
             {% for item in msgError %}
-            <li>{{ item }}</li>
+            <li class="miestilo">{{ item }}</li>
             {% endfor %}                    
         </ul>
     </article>
